@@ -1,7 +1,7 @@
 export default {
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    title: 'urbanet-frontend',
+    title: 'Urbanet',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -12,12 +12,16 @@ export default {
     ]
   },
 
+  loading: { color: '#3B8070', height: '4px', duration: 5000 },
+
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
+    '~/assets/styles/main.css'
   ],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
+    '~/plugins/core-components.js'
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
@@ -38,9 +42,15 @@ export default {
   ],
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
-  axios: {},
+  axios: {
+    baseURL: process.env.BASE_URL || 'http://localhost:1337'
+  },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
+  },
+  transition: {
+    name: 'fade',
+    mode: 'out-in'
   }
 }
