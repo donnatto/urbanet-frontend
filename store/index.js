@@ -35,7 +35,7 @@ const createStore = () => {
           .then((data) => {
             const propertyArray = []
             for (const key in data) {
-              propertyArray.push({ ...data[key], id: key })
+              propertyArray.push({ ...data[key], id: +key + 1 })
             }
             vuexContext.commit('setProperties', propertyArray)
           })

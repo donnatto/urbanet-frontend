@@ -24,11 +24,6 @@ export default {
       type: Array,
       required: true
     }
-  },
-  computed: {
-    propertyLink () {
-      return '/propiedades/' + this.id
-    }
   }
 }
 </script>
