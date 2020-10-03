@@ -48,7 +48,7 @@
               {{ $auth.user.firstName }}
               <b-icon icon="person-circle" />
             </template>
-            <b-dropdown-item to="/subir-propiedades">
+            <b-dropdown-item to="/propiedades/nueva">
               Subir Propiedades
             </b-dropdown-item>
             <b-dropdown-item @click="onLogout">

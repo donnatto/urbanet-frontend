@@ -5,8 +5,7 @@
       :id="property.id"
       :key="property.id"
       :title="property.propertyType"
-      :img-src="'http://localhost:1337' + property.mainPicture.formats.thumbnail.url"
-      :img-alt="property.mainPicture.alternativeText"
+      :img-src="property.imageURL"
       :card-text="property.description"
     />
   </b-card-group>

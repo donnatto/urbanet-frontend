@@ -3,7 +3,6 @@
     <b-card
       :title="title"
       :img-src="imgSrc"
-      :img-alt="imgAlt"
       img-top
     >
       <b-card-text>
@@ -25,10 +24,6 @@ export default {
       required: true
     },
     imgSrc: {
-      type: String,
-      required: true
-    },
-    imgAlt: {
       type: String,
       required: true
     },

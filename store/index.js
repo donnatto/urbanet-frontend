@@ -44,6 +44,12 @@ const createStore = () => {
       setProperties (vuexContext, properties) {
         vuexContext.commit('setProperties', properties)
       },
+      addProperty (vuexContext, property) {
+        return this.$axios.$post('/properties', property)
+          .then((data) => {
+            vuexContext.commit('addProperty', data)
+          })
+      },
       authenticateUser (vuexContext, authData) {
         this.$auth.loginWith('local', {
           data: {
