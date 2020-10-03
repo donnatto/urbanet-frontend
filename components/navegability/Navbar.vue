@@ -30,16 +30,28 @@
               Buscar
             </b-button>
           </b-nav-form>
-          <b-nav-item-dropdown right>
+          <b-nav-item-dropdown v-if="!isAuthenticated" right>
             <!-- Using 'button-content' slot -->
             <template v-slot:button-content>
-              <em>Usuario</em>
+              <b-icon icon="person-circle" />
             </template>
-            <b-dropdown-item href="#">
+            <b-dropdown-item to="/login">
               Login
             </b-dropdown-item>
-            <b-dropdown-item href="#">
+            <b-dropdown-item to="/registro">
               Registro
+            </b-dropdown-item>
+          </b-nav-item-dropdown>
+          <b-nav-item-dropdown v-if="isAuthenticated" right>
+            <!-- Using 'button-content' slot -->
+            <template v-slot:button-content>
+              <b-icon icon="person-circle" />
+            </template>
+            <b-dropdown-item to="/subir-propiedades">
+              Subir Propiedades
+            </b-dropdown-item>
+            <b-dropdown-item @click="onLogout">
+              Cerrar Sesion
             </b-dropdown-item>
           </b-nav-item-dropdown>
         </b-navbar-nav>
@@ -47,3 +59,18 @@
     </b-container>
   </b-navbar>
 </template>
+
+<script>
+export default {
+  computed: {
+    isAuthenticated () {
+      return this.$auth.loggedIn
+    }
+  },
+  methods: {
+    onLogout () {
+      this.$auth.logout()
+    }
+  }
+}
+</script>

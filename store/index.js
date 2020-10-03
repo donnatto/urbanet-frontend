@@ -1,9 +1,11 @@
 import Vuex from 'vuex'
+import Cookie from 'js-cookie'
 
 const createStore = () => {
   return new Vuex.Store({
     state: {
-      loadedProperties: []
+      loadedProperties: [],
+      token: null
     },
     mutations: {
       setProperties (state, properties) {
@@ -15,6 +17,15 @@ const createStore = () => {
       editProperty (state, editedProperty) {
         const propertyIndex = state.loadedProperties.findIndex(property => property.id === editedProperty.id)
         state.loadedProperties[propertyIndex] = editedProperty
+      },
+      setToken (state, token) {
+        state.token = token
+      },
+      clearToken (state) {
+        state.token = null
+      },
+      clearAuth (state) {
+        state.auth = null
       }
     },
     actions: {
@@ -32,6 +43,25 @@ const createStore = () => {
       },
       setProperties (vuexContext, properties) {
         vuexContext.commit('setProperties', properties)
+      },
+      authenticateUser (vuexContext, authData) {
+        this.$auth.loginWith('local', {
+          data: {
+            identifier: authData.identifier,
+            password: authData.password
+          }
+        })
+          .then((res) => {
+            this.$auth.setUser(res.data.user)
+            vuexContext.commit('setToken', res.data.jwt)
+          })
+          .catch(e => console.log(e))
+      },
+      logout (vuexContext) {
+        vuexContext.commit('clearToken')
+        vuexContext.commit('clearAuth')
+        Cookie.remove('auth._token.local')
+        localStorage.removeItem('auth._token.local')
       }
     },
     getters: {

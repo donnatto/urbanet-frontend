@@ -38,12 +38,25 @@ export default {
     // https://go.nuxtjs.dev/bootstrap
     'bootstrap-vue/nuxt',
     // https://go.nuxtjs.dev/axios
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    '@nuxtjs/auth'
   ],
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
   axios: {
     baseURL: process.env.BASE_URL || 'http://localhost:1337'
+  },
+
+  auth: {
+    strategies: {
+      local: {
+        endpoints: {
+          login: { url: '/auth/local', method: 'post', propertyName: 'jwt' },
+          user: false
+        },
+        autoFetchUser: false
+      }
+    }
   },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
@@ -53,7 +66,12 @@ export default {
     name: 'fade',
     mode: 'out-in'
   },
+
   env: {
     BASE_URL: process.env.BASE_URL || 'http://localhost:1337'
+  },
+
+  bootstrapVue: {
+    icons: true
   }
 }
