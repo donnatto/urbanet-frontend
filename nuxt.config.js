@@ -54,7 +54,7 @@ export default {
           login: { url: '/auth/local', method: 'post', propertyName: 'jwt' },
           user: false
         },
-        autoFetchUser: false
+        autoFetchUser: true
       }
     }
   },

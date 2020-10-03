@@ -57,6 +57,10 @@ const createStore = () => {
           })
           .catch(e => console.log(e))
       },
+      registerUser (vuexContext, data) {
+        this.$axios.post('/auth/local/register', data)
+          .catch(e => console.log(e))
+      },
       logout (vuexContext) {
         vuexContext.commit('clearToken')
         vuexContext.commit('clearAuth')

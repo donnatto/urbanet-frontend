@@ -45,6 +45,7 @@
           <b-nav-item-dropdown v-if="isAuthenticated" right>
             <!-- Using 'button-content' slot -->
             <template v-slot:button-content>
+              {{ $auth.user.firstName }}
               <b-icon icon="person-circle" />
             </template>
             <b-dropdown-item to="/subir-propiedades">
