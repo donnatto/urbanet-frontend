@@ -1,5 +1,5 @@
 <template>
-  <b-navbar toggleable="lg" type="dark" variant="info" class="mb-3">
+  <b-navbar toggleable="lg" type="dark" variant="info">
     <b-container>
       <b-navbar-brand to="/">
         Urbanet

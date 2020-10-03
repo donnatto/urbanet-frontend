@@ -52,5 +52,8 @@ export default {
   transition: {
     name: 'fade',
     mode: 'out-in'
+  },
+  env: {
+    BASE_URL: process.env.BASE_URL || 'http://localhost:1337'
   }
 }

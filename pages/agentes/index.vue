@@ -1,6 +1,6 @@
 <template>
   <b-container>
-    <b-jumbotron text-variant="white" header="Agentes" lead="Mira nuestros agentes inmobiliarios" class="jumbo">
+    <b-jumbotron text-variant="white" header="Agentes" lead="Mira nuestros agentes inmobiliarios" class="jumbo mt-3">
       <p>Dispuestos siempre a atenderte</p>
     </b-jumbotron>
   </b-container>
