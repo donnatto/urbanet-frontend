@@ -14,11 +14,6 @@ export default {
 
   loading: { color: '#3B8070', height: '4px', duration: 5000 },
 
-  // Global CSS (https://go.nuxtjs.dev/config-css)
-  css: [
-    '~/assets/styles/main.css'
-  ],
-
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
     '~/plugins/core-components.js'
@@ -30,7 +25,7 @@ export default {
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
   buildModules: [
     // https://go.nuxtjs.dev/eslint
-    '@nuxtjs/eslint-module'
+    '@nuxtjs/eslint-module',
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
@@ -39,7 +34,8 @@ export default {
     'bootstrap-vue/nuxt',
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
-    '@nuxtjs/auth'
+    '@nuxtjs/auth',
+    '@nuxtjs/style-resources',
   ],
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
@@ -73,5 +69,14 @@ export default {
 
   bootstrapVue: {
     icons: true
+  },
+
+  css: [
+    '~assets/styles/main.scss',
+  ],
+
+  styleResources: {
+    scss: [
+    ]
   }
 }

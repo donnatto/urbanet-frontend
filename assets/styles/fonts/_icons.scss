@@ -1,0 +1,385 @@
+
+@font-face {
+	font-family: icon-features;
+	src: url(https://img10.naventcdn.com/ficha/RPFICv4.3.0-RC1/7ef6c178d169c9f8230a-icon-features.eot#iefix) format("embedded-opentype"), url(https://img10.naventcdn.com/ficha/RPFICv4.3.0-RC1/7ef6c178d169c9f8230a-icon-features.woff) format("woff"), url(https://img10.naventcdn.com/ficha/RPFICv4.3.0-RC1/7ef6c178d169c9f8230a-icon-features.woff2) format("woff2"), url(https://img10.naventcdn.com/ficha/RPFICv4.3.0-RC1/7ef6c178d169c9f8230a-icon-features.ttf) format("truetype"), url(https://img10.naventcdn.com/ficha/RPFICv4.3.0-RC1/7ef6c178d169c9f8230a-icon-features.svg#icon-features) format("svg");
+	font-display: swap
+}
+
+.icon-f {
+	line-height: 1;
+}
+
+.icon-f:before {
+	font-family: icon-features!important;
+	font-style: normal;
+	font-weight: 400!important;
+	vertical-align: top
+}
+
+.icon-f-ambiente:before {
+	content: "\f101"
+}
+
+.icon-f-antiguedad:before {
+	content: "\f102"
+}
+
+.icon-f-bano:before {
+	content: "\f103"
+}
+
+.icon-f-cochera:before {
+	content: "\f104"
+}
+
+.icon-f-disposicion:before {
+	content: "\f105"
+}
+
+.icon-f-dormitorio:before {
+	content: "\f106"
+}
+
+.icon-f-inmueble:before {
+	content: "\f107"
+}
+
+.icon-f-luminosidad:before {
+	content: "\f108"
+}
+
+.icon-f-orientacion:before {
+	content: "\f109"
+}
+
+.icon-f-personas:before {
+	content: "\f10a"
+}
+
+.icon-f-scubierta:before {
+	content: "\f10b"
+}
+
+.icon-f-stotal:before {
+	content: "\f10c"
+}
+
+.icon-f-toilete:before {
+	content: "\f10d"
+}
+
+
+.icon-g {
+	line-height: 1
+}
+
+.icon-g:before {
+	font-family: icon-generals!important;
+	font-style: normal;
+	font-weight: 400!important;
+	vertical-align: top
+}
+
+.icon-g-alertas:before {
+	content: "\f101"
+}
+
+.icon-g-arroba:before {
+	content: "\f102"
+}
+
+.icon-g-backarrow:before {
+	content: "\f103"
+}
+
+.icon-g-cantidad-fotos:before {
+	content: "\f104"
+}
+
+.icon-g-chat:before {
+	content: "\f105"
+}
+
+.icon-g-check-ok:before {
+	content: "\f106"
+}
+
+.icon-g-check:before {
+	content: "\f107"
+}
+
+.icon-g-chevron-down:before {
+	content: "\f108"
+}
+
+.icon-g-chevron-left:before {
+	content: "\f109"
+}
+
+.icon-g-chevron-right:before {
+	content: "\f10a"
+}
+
+.icon-g-chevron-up:before {
+	content: "\f10b"
+}
+
+.icon-g-close:before {
+	content: "\f10c"
+}
+
+.icon-g-compartir:before {
+	content: "\f10d"
+}
+
+.icon-g-contactados:before {
+	content: "\f10e"
+}
+
+.icon-g-cross-error:before {
+	content: "\f10f"
+}
+
+.icon-g-denunciar:before {
+	content: "\f110"
+}
+
+.icon-g-development:before {
+	content: "\f111"
+}
+
+.icon-g-directorio:before {
+	content: "\f112"
+}
+
+.icon-g-expandir:before {
+	content: "\f113"
+}
+
+.icon-g-facebook-logo:before {
+	content: "\f114"
+}
+
+.icon-g-facebook:before {
+	content: "\f115"
+}
+
+.icon-g-favorito:before {
+	content: "\f116"
+}
+
+.icon-g-favoritos:before {
+	content: "\f117"
+}
+
+.icon-g-fecha-publicado:before {
+	content: "\f118"
+}
+
+.icon-g-fecha:before {
+	content: "\f119"
+}
+
+.icon-g-galeria:before {
+	content: "\f11a"
+}
+
+.icon-g-google-plus:before {
+	content: "\f11b"
+}
+
+.icon-g-guaranty:before {
+	content: "\f11c"
+}
+
+.icon-g-hamburger:before {
+	content: "\f11d"
+}
+
+.icon-g-house:before {
+	content: "\f11e"
+}
+
+.icon-g-impresora:before {
+	content: "\f11f"
+}
+
+.icon-g-info:before {
+	content: "\f120"
+}
+
+.icon-g-ingresar:before {
+	content: "\f121"
+}
+
+.icon-g-inmobiliaria:before {
+	content: "\f122"
+}
+
+.icon-g-instagram:before {
+	content: "\f123"
+}
+
+.icon-g-inview:before {
+	content: "\f124"
+}
+
+.icon-g-lampara:before {
+	content: "\f125"
+}
+
+.icon-g-like:before {
+	content: "\f126"
+}
+
+.icon-g-link:before {
+	content: "\f127"
+}
+
+.icon-g-location:before {
+	content: "\f128"
+}
+
+.icon-g-logo-adondevivir:before {
+	content: "\f129"
+}
+
+.icon-g-logo-compreoalquile:before {
+	content: "\f12a"
+}
+
+.icon-g-logo-conlallave:before {
+	content: "\f12b"
+}
+
+.icon-g-logo-imoveiscuritiba:before {
+	content: "\f12c"
+}
+
+.icon-g-logo-imovelweb:before {
+	content: "\f12d"
+}
+
+.icon-g-logo-inmuebles24:before {
+	content: "\f12e"
+}
+
+.icon-g-logo-llave:before {
+	content: "\f12f"
+}
+
+.icon-g-logo-plusvalia:before {
+	content: "\f130"
+}
+
+.icon-g-logo-wimoveis:before {
+	content: "\f131"
+}
+
+.icon-g-logo-zonaprop:before {
+	content: "\f132"
+}
+
+.icon-g-map-enter-fs:before {
+	content: "\f133"
+}
+
+.icon-g-map-exit-fs:before {
+	content: "\f134"
+}
+
+.icon-g-menu-fav:before {
+	content: "\f135"
+}
+
+.icon-g-menu:before {
+	content: "\f136"
+}
+
+.icon-g-mundo:before {
+	content: "\f137"
+}
+
+.icon-g-noticias:before {
+	content: "\f138"
+}
+
+.icon-g-pinterest:before {
+	content: "\f139"
+}
+
+.icon-g-pixelplus:before {
+	content: "\f13a"
+}
+
+.icon-g-publicar:before {
+	content: "\f13b"
+}
+
+.icon-g-replay:before {
+	content: "\f13c"
+}
+
+.icon-g-search:before {
+	content: "\f13d"
+}
+
+.icon-g-tab-foto:before {
+	content: "\f13e"
+}
+
+.icon-g-tab-mapa:before {
+	content: "\f13f"
+}
+
+.icon-g-tab-plano:before {
+	content: "\f140"
+}
+
+.icon-g-tab-recorrido:before {
+	content: "\f141"
+}
+
+.icon-g-tab-street:before {
+	content: "\f142"
+}
+
+.icon-g-tab-video:before {
+	content: "\f143"
+}
+
+.icon-g-telefono:before {
+	content: "\f144"
+}
+
+.icon-g-three-buildings:before {
+	content: "\f145"
+}
+
+.icon-g-twitter:before {
+	content: "\f146"
+}
+
+.icon-g-valuador:before {
+	content: "\f147"
+}
+
+.icon-g-vistos:before {
+	content: "\f148"
+}
+
+.icon-g-warning:before {
+	content: "\f149"
+}
+
+.icon-g-whatsapp:before {
+	content: "\f14a"
+}
+
+.icon-g-youtube-gallery:before {
+	content: "\f14b"
+}
+
+.icon-g-youtube:before {
+	content: "\f14c"
+}
