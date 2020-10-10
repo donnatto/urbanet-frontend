@@ -1,5 +1,5 @@
 <template>
-  <b-container>
+  <b-container class="mb-5">
     <b-jumbotron header="Propiedades" lead="Mira nuestras propiedades" text-variant="white" class="jumbo mt-3" />
     <PropertyList :properties="loadedProperties" />
   </b-container>
