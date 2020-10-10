@@ -51,6 +51,9 @@
             <b-dropdown-item to="/propiedades/nueva">
               Subir Propiedades
             </b-dropdown-item>
+            <b-dropdown-item to="/agentes/propiedades">
+              Mis Propiedades
+            </b-dropdown-item>
             <b-dropdown-item @click="onLogout">
               Cerrar Sesion
             </b-dropdown-item>

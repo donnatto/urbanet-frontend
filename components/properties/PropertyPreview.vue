@@ -30,11 +30,15 @@ export default {
     cardText: {
       type: String,
       required: true
+    },
+    isEdit: {
+      type: Boolean,
+      required: true
     }
   },
   computed: {
     propertyLink () {
-      return '/propiedades/' + this.id
+      return this.isEdit ? '/propiedades/' + this.id + '/editar' : '/propiedades/' + this.id
     }
   }
 }

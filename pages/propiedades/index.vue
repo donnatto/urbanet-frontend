@@ -1,7 +1,7 @@
 <template>
   <b-container class="mb-5">
     <b-jumbotron header="Propiedades" lead="Mira nuestras propiedades" text-variant="white" class="jumbo mt-3" />
-    <PropertyList :properties="loadedProperties" />
+    <PropertyList :properties="loadedProperties" :is-edit="false" />
   </b-container>
 </template>
 
@@ -12,10 +12,15 @@ export default {
   components: {
     PropertyList
   },
-  computed: {
-    loadedProperties () {
-      return this.$store.getters.loadedProperties
-    }
+  asyncData (context) {
+    return context.app.$axios
+      .$get('/properties/')
+      .then((data) => {
+        return {
+          loadedProperties: data
+        }
+      })
+      .catch(e => context.console.log(e))
   }
 }
 </script>

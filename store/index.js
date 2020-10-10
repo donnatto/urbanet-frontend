@@ -5,7 +5,8 @@ const createStore = () => {
   return new Vuex.Store({
     state: {
       loadedProperties: [],
-      token: null
+      token: null,
+      user: null
     },
     mutations: {
       setProperties (state, properties) {
@@ -23,6 +24,16 @@ const createStore = () => {
       },
       clearToken (state) {
         state.token = null
+      },
+      setUser (state, user) {
+        state.user = user
+        if (process.browser) {
+          localStorage.setItem('user', user)
+        }
+      },
+      clearUser (state) {
+        state.user = null
+        localStorage.removeItem('user')
       },
       clearAuth (state) {
         state.auth = null
@@ -64,6 +75,7 @@ const createStore = () => {
           }
         })
           .then((res) => {
+            vuexContext.commit('setUser', res.data.user)
             this.$auth.setUser(res.data.user)
             vuexContext.commit('setToken', res.data.jwt)
           })
@@ -76,6 +88,7 @@ const createStore = () => {
       logout (vuexContext) {
         vuexContext.commit('clearToken')
         vuexContext.commit('clearAuth')
+        vuexContext.commit('clearUser')
         Cookie.remove('auth._token.local')
         localStorage.removeItem('auth._token.local')
       }

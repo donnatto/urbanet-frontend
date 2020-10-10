@@ -7,6 +7,7 @@
       :title="property.propertyType"
       :img-src="property.imageURL"
       :card-text="property.description"
+      :is-edit="isEdit"
     />
   </b-card-group>
 </template>
@@ -22,6 +23,10 @@ export default {
   props: {
     properties: {
       type: Array,
+      required: true
+    },
+    isEdit: {
+      type: Boolean,
       required: true
     }
   }
