@@ -69,11 +69,29 @@
             </li>
           </ul>
         </div>
+        <div class="hero__data pb-3">
+          <b-button id="show-btn" variant="success" @click="$bvModal.show('modal-contact-agent')">Contactar al Agente</b-button>
+        </div>
         <div class="hero__description">
           <p>{{ loadedProperty.description }}</p>
         </div>
       </div>
     </b-container>
+
+    <b-modal id="modal-contact-agent" hide-footer>
+      <template v-slot:modal-title>
+        Contactar al Agente
+      </template>
+      <div class="d-block text-center">
+        <b-list-group>
+
+          <b-list-group-item><b-icon-person-circle></b-icon-person-circle> {{ loadedProperty.user.firstName }} {{ loadedProperty.user.lastName }}</b-list-group-item>
+          <b-list-group-item><b-icon-mailbox></b-icon-mailbox> {{ loadedProperty.user.email }}</b-list-group-item>
+          <b-list-group-item><b-icon-telephone></b-icon-telephone> {{ loadedProperty.user.phoneNumber }}</b-list-group-item>
+        </b-list-group>
+      </div>
+      <b-button class="mt-3" block @click="$bvModal.hide('modal-contact-agent')">Cerrar</b-button>
+    </b-modal>
   </div>
 </template>
 
