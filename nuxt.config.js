@@ -9,6 +9,11 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+    ],
+    script: [
+      {
+        src: 'https://maps.googleapis.com/maps/api/js?key=' + process.env.GOOGLE_API_KEY + '&libraries=places'
+      }
     ]
   },
 
@@ -25,7 +30,6 @@ export default {
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
   buildModules: [
     // https://go.nuxtjs.dev/eslint
-    '@nuxtjs/eslint-module'
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
@@ -64,7 +68,8 @@ export default {
   },
 
   env: {
-    BASE_URL: process.env.BASE_URL || 'http://localhost:1337'
+    BASE_URL: process.env.BASE_URL || 'http://localhost:1337',
+    GOOGLE_API_KEY: process.env.GOOGLE_API_KEY
   },
 
   bootstrapVue: {

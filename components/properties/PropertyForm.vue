@@ -59,9 +59,29 @@
             <b-form-input v-model="editedProperty.houseArea" type="number" required />
           </b-form-group>
           <b-form-group
+            label="Antiguedad (años)"
+          >
+            <b-form-input v-model="editedProperty.antiquity" type="text" required />
+          </b-form-group>
+          <b-form-group
             label="Descripcion de Inmueble"
           >
             <b-form-textarea v-model="editedProperty.description" placeholder="Ingrese una descripcion para el inmueble" rows="3" required />
+          </b-form-group>
+          <b-form-group
+            label="Direccion"
+          >
+            <b-form-input id="searchTextField" v-model="editedProperty.address" type="text" placeholder="Ingrese la direccion" required />
+          </b-form-group>
+          <b-form-group
+            label="Latitud"
+          >
+            <b-form-input id="lat" v-model="editedProperty.latitude" type="number" readonly />
+          </b-form-group>
+          <b-form-group
+            label="Longitud"
+          >
+            <b-form-input id="long" v-model="editedProperty.longitude" type="number" readonly />
           </b-form-group>
           <b-form-group
             label="URL de Imagen"
@@ -121,10 +141,31 @@ export default {
           floorNumber: '',
           landArea: '',
           houseArea: '',
+          antiquity: '',
           description: '',
+          address: '',
+          latitude: '',
+          longitude: '',
           imageURL: ''
         }
     }
+  },
+  mounted () {
+    const defaultBounds = new google.maps.LatLngBounds(
+      new google.maps.LatLng(-12.396988, -77.222710),
+      new google.maps.LatLng(-11.560275, -76.543379)
+    )
+    const input = document.getElementById('searchTextField')
+    const options = {
+      bounds: defaultBounds
+    }
+
+    const autocomplete = new google.maps.places.Autocomplete(input, options)
+    google.maps.event.addListener(autocomplete, 'place_changed', () => {
+      const place = autocomplete.getPlace()
+      this.editedProperty.latitude = place.geometry.location.lat()
+      this.editedProperty.longitude = place.geometry.location.lng()
+    })
   },
   methods: {
     onSubmit () {
