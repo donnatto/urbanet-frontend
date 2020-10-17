@@ -64,11 +64,8 @@ export default {
         lastName: this.lastName,
         phoneNumber: this.phoneNumber
       })
-      this.$store.dispatch('authenticateUser', {
-        identifier: this.username,
-        password: this.password
-      }
-      )
+      alert('Gracias por registrarse, verifique su correo')
+      this.$router.push('/')
     }
   }
 }
