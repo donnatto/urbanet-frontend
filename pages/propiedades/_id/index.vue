@@ -11,7 +11,7 @@
         <div class="hero__data">
           {{ loadedProperty.category }} - {{ loadedProperty.propertyType }}
         </div>
-        <div class="hero__data">
+        <div class="hero__data mb-1">
           <ul class="section-icon-features">
             <li class="section-icon-features__item">
               <i class="icon-f icon-f-stotal" />
@@ -57,7 +57,7 @@
               <br>
               <b>{{ loadedProperty.numberOfFloors }}</b>
               <br>
-              <span>Pisos</span>
+              <span>Piso(s)</span>
             </li>
 
             <li class="section-icon-features__item">
@@ -65,16 +65,19 @@
               <br>
               <b>{{ loadedProperty.antiquity }}</b>
               <br>
-              <span>Antigüedad</span>
+              <span>Año(s) de Antigüedad</span>
             </li>
           </ul>
         </div>
-        <div class="hero__data pb-3">
-          <b-button id="show-btn" variant="success" @click="$bvModal.show('modal-contact-agent')">Contactar al Agente</b-button>
-        </div>
         <div class="hero__description">
           <p>{{ loadedProperty.description }}</p>
+        </div><div class="hero__description">
+          <p><strong>Direccion: </strong>{{ loadedProperty.address }}</p>
         </div>
+        <div class="hero__data mb-2">
+          <b-button id="show-btn" variant="success" @click="$bvModal.show('modal-contact-agent')">Contactar al Agente</b-button>
+        </div>
+        <b-container id="map" class="mb-3"></b-container>
       </div>
     </b-container>
 
@@ -86,8 +89,8 @@
         <b-list-group>
 
           <b-list-group-item><b-icon-person-circle></b-icon-person-circle> {{ loadedProperty.user.firstName }} {{ loadedProperty.user.lastName }}</b-list-group-item>
-          <b-list-group-item><b-icon-mailbox></b-icon-mailbox> {{ loadedProperty.user.email }}</b-list-group-item>
-          <b-list-group-item><b-icon-telephone></b-icon-telephone> {{ loadedProperty.user.phoneNumber }}</b-list-group-item>
+          <b-list-group-item><b-icon-mailbox></b-icon-mailbox><a :href="'mailto:' + loadedProperty.user.email"> {{ loadedProperty.user.email }}</a></b-list-group-item>
+          <b-list-group-item><b-icon-telephone></b-icon-telephone><a :href="'tel:' + loadedProperty.user.phoneNumber"> {{ loadedProperty.user.phoneNumber }}</a></b-list-group-item>
         </b-list-group>
       </div>
       <b-button class="mt-3" block @click="$bvModal.hide('modal-contact-agent')">Cerrar</b-button>
@@ -106,6 +109,20 @@ export default {
         }
       })
       .catch(e => context.console.log(e))
+  },
+  mounted () {
+    const position = {
+      lat: this.loadedProperty.latitude,
+      lng: this.loadedProperty.longitude
+    }
+    const map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 15,
+      center: position
+    })
+    const marker = new google.maps.Marker({
+      position,
+      map
+    })
   }
 }
 </script>
@@ -147,12 +164,12 @@ $heroNumber: 400px;
 
   &__description {
     color: $white;
+    text-align: center;
   }
 
   &__data {
     color: $white;
     text-align: center;
-    margin-bottom: 0.5rem;
   }
 }
 
@@ -184,5 +201,12 @@ $heroNumber: 400px;
       }
     }
   }
+
+}
+
+#map {
+  height: 300px;
+  width: 65%;
+  border-radius: 10px;
 }
 </style>
