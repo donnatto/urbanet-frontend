@@ -40,7 +40,7 @@ import algoliasearch from 'algoliasearch'
 import PropertyPreview from '@/components/properties/PropertyPreview'
 import 'instantsearch.css/themes/algolia-min.css'
 
-const client = algoliasearch('9786XJSV62', '2872d6d59083888cd4130a58a7ae3a93')
+const client = algoliasearch('9786XJSV62', process.env.ALGOLIA_SEARCH_API_KEY)
 
 // this setup is required to prevent search on empty query
 const searchClient = {

@@ -70,7 +70,8 @@ export default {
 
   env: {
     BASE_URL: process.env.BASE_URL || 'http://localhost:1337',
-    GOOGLE_API_KEY: process.env.GOOGLE_API_KEY
+    GOOGLE_API_KEY: process.env.GOOGLE_API_KEY,
+    ALGOLIA_SEARCH_API_KEY: process.env.ALGOLIA_SEARCH_API_KEY
   },
 
   bootstrapVue: {
