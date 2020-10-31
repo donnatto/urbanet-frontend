@@ -33,6 +33,11 @@
           >
             <b-form-input v-model="phoneNumber" type="text" placeholder="Ingresa tu numero de celular" required />
           </b-form-group>
+          <b-form-group>
+            <b-form-checkbox v-model="status" value="accepted" unchecked-value="not_accepted">
+              Acepto los <terms />
+            </b-form-checkbox>
+          </b-form-group>
           <b-button type="submit" variant="info">
             Registrarse
           </b-button>
@@ -43,7 +48,11 @@
 </template>
 
 <script>
+import Terms from '@/components/terms/Terms'
 export default {
+  components: {
+    Terms
+  },
   data () {
     return {
       username: '',
@@ -51,21 +60,26 @@ export default {
       password: '',
       firstName: '',
       lastName: '',
-      phoneNumber: ''
+      phoneNumber: '',
+      status: 'not_accepted'
     }
   },
   methods: {
     async onSubmit () {
-      await this.$axios.post('/auth/local/register', {
-        username: this.username,
-        email: this.email,
-        password: this.password,
-        firstName: this.firstName,
-        lastName: this.lastName,
-        phoneNumber: this.phoneNumber
-      })
-      alert('Gracias por registrarse, verifique su correo')
-      this.$router.push('/')
+      if (this.status === 'accepted') {
+        await this.$axios.post('/auth/local/register', {
+          username: this.username,
+          email: this.email,
+          password: this.password,
+          firstName: this.firstName,
+          lastName: this.lastName,
+          phoneNumber: this.phoneNumber
+        })
+        alert('Gracias por registrarse, verifique su correo')
+        this.$router.push('/')
+      } else {
+        alert('Debe aceptar los términos y condiciones')
+      }
     }
   }
 }
