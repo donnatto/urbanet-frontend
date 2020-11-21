@@ -78,8 +78,11 @@
           <b-button id="show-btn" variant="success" @click="$bvModal.show('modal-contact-agent')">Contactar al Agente</b-button>
         </div>
         <b-container id="map" class="mb-3"></b-container>
+        <h3 class="title360">
+          Visita guiada 360
+        </h3>
+        <div id="pano" class="mb-2"></div>
       </div>
-        <h2 class="title360">Visita guiada 360</h2>
     </b-container>
 
     <b-modal id="modal-contact-agent" hide-footer>
@@ -125,8 +128,9 @@ export default {
       map
     })
 
+    const pano = document.getElementById('pano');
     const panorama = new PANOLENS.ImagePanorama( 'http://localhost:1337' + this.loadedProperty.view360.url );
-    const viewer = new PANOLENS.Viewer( { output: 'console' } );
+    const viewer = new PANOLENS.Viewer({ container: pano });
     viewer.add( panorama );
   }
 }
@@ -217,6 +221,14 @@ $heroNumber: 400px;
 
 .title360 {
   text-align: center;
-  color: $green-aqua-1;
+  color: white;
+}
+
+#pano {
+  margin-left: auto;
+  margin-right: auto;
+  width: 700px;
+  height: 400px;
+  border-radius: 10px;
 }
 </style>
