@@ -79,6 +79,7 @@
         </div>
         <b-container id="map" class="mb-3"></b-container>
       </div>
+        <h2 class="title360">Visita guiada 360</h2>
     </b-container>
 
     <b-modal id="modal-contact-agent" hide-footer>
@@ -123,6 +124,10 @@ export default {
       position,
       map
     })
+
+    const panorama = new PANOLENS.ImagePanorama( 'http://localhost:1337' + this.loadedProperty.view360.url );
+    const viewer = new PANOLENS.Viewer( { output: 'console' } );
+    viewer.add( panorama );
   }
 }
 </script>
@@ -208,5 +213,10 @@ $heroNumber: 400px;
   height: 300px;
   width: 65%;
   border-radius: 10px;
+}
+
+.title360 {
+  text-align: center;
+  color: $green-aqua-1;
 }
 </style>

@@ -12,8 +12,15 @@ export default {
     ],
     script: [
       {
-        src: 'https://maps.googleapis.com/maps/api/js?key=' + process.env.GOOGLE_API_KEY + '&libraries=places'
+        src: 'https://maps.googleapis.com/maps/api/js?key=' + 'AIzaSyCHWIO1q5d_-8vUSrB9tobNWxAgSOuUqhI' + '&libraries=places'
+      },
+      {
+        src: 'https://pchen66.github.io/panolens.js/js/three/three.min.js'
+      },
+      {
+        src: 'https://pchen66.github.io/panolens.js/js/panolens/panolens.min.js'
       }
+
     ]
   },
 
@@ -71,7 +78,7 @@ export default {
   env: {
     BASE_URL: process.env.BASE_URL || 'http://localhost:1337',
     GOOGLE_API_KEY: process.env.GOOGLE_API_KEY,
-    ALGOLIA_SEARCH_API_KEY: process.env.ALGOLIA_SEARCH_API_KEY
+    ALGOLIA_SEARCH_API_KEY: 'AIzaSyCHWIO1q5d_-8vUSrB9tobNWxAgSOuUqhI'
   },
 
   bootstrapVue: {
