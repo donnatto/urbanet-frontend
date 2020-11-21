@@ -128,10 +128,12 @@ export default {
       map
     })
 
-    const pano = document.getElementById('pano');
-    const panorama = new PANOLENS.ImagePanorama( 'http://localhost:1337' + this.loadedProperty.view360.url );
-    const viewer = new PANOLENS.Viewer({ container: pano });
-    viewer.add( panorama );
+    if (this.loadedProperty.view360 != null) {
+      const pano = document.getElementById('pano');
+      const panorama = new PANOLENS.ImagePanorama( 'http://localhost:1337' + this.loadedProperty.view360.url );
+      const viewer = new PANOLENS.Viewer({ container: pano });
+      viewer.add( panorama );
+    }
   }
 }
 </script>
