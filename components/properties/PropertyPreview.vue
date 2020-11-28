@@ -1,9 +1,11 @@
 <template>
   <nuxt-link :to="propertyLink">
     <b-card
-      :title="title"
+      :title="conditionalTitle"
       :img-src="imgSrc"
       img-top
+      v-if="available"
+      :bg-variant="cardStyle"
     >
       <b-card-text>
         {{ cardText }}
@@ -34,11 +36,25 @@ export default {
     isEdit: {
       type: Boolean,
       required: true
+    },
+    separated: {
+      type: Boolean,
+      required: true
+    },
+    available: {
+      type: Boolean,
+      required: true
     }
   },
   computed: {
     propertyLink () {
       return this.isEdit ? '/propiedades/' + this.id + '/editar' : '/propiedades/' + this.id
+    },
+    cardStyle() {
+      return this.separated ? 'info' : 'default'
+    },
+    conditionalTitle() {
+      return this.separated ? this.title + " - SEPARADO" : this.title
     }
   }
 }

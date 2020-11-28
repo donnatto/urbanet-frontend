@@ -8,6 +8,8 @@
       :img-src="property.imageURL"
       :card-text="property.description"
       :is-edit="isEdit"
+      :separated="property.separated"
+      :available="property.available"
     />
   </b-card-group>
 </template>
