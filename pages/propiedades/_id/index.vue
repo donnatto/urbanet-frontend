@@ -130,7 +130,7 @@ export default {
 
     if (this.loadedProperty.view360 != null) {
       const pano = document.getElementById('pano');
-      const panorama = new PANOLENS.ImagePanorama( 'http://localhost:1337' + this.loadedProperty.view360.url );
+      const panorama = new PANOLENS.ImagePanorama(this.loadedProperty.view360.formats.large.url );
       const viewer = new PANOLENS.Viewer({ container: pano });
       viewer.add( panorama );
     }

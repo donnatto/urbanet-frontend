@@ -10,9 +10,6 @@
           <b-nav-item to="/propiedades">
             Propiedades
           </b-nav-item>
-          <b-nav-item to="/agentes">
-            Agentes
-          </b-nav-item>
         </b-navbar-nav>
         <!-- Right aligned nav items -->
         <b-navbar-nav class="ml-auto">

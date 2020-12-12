@@ -15,6 +15,8 @@
               :title="item.propertyType"
               :img-src="item.imageURL"
               :card-text="item.description"
+              :available="item.available"
+              :separated="item.separated"
               :is-edit="false"
             />
           </div>

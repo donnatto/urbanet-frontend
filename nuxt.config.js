@@ -52,7 +52,7 @@ export default {
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
   axios: {
-    baseURL: process.env.BASE_URL || 'http://localhost:1337'
+    baseURL: process.env.BASE_URL || 'http://34.237.1.42:1337'
   },
 
   auth: {
@@ -76,9 +76,9 @@ export default {
   },
 
   env: {
-    BASE_URL: process.env.BASE_URL || 'http://localhost:1337',
+    BASE_URL: process.env.BASE_URL || 'http://34.237.1.42:1337',
     GOOGLE_API_KEY: process.env.GOOGLE_API_KEY,
-    ALGOLIA_SEARCH_API_KEY: 'AIzaSyCHWIO1q5d_-8vUSrB9tobNWxAgSOuUqhI'
+    ALGOLIA_SEARCH_API_KEY: process.env.ALGOLIA_API_KEY,
   },
 
   bootstrapVue: {

@@ -59,6 +59,7 @@ const createStore = () => {
         return this.$axios.$post('/properties', property)
           .then((data) => {
             vuexContext.commit('addProperty', data)
+            return data
           })
       },
       editProperty (vuexContext, property) {
